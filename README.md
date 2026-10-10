@@ -63,7 +63,7 @@ El proyecto adopta un **enfoque mixto**: combina datos cuantitativos obtenidos m
 
 ### Herramientas
 
-Python, pandas, numpy, matplotlib, seaborn, scikit-learn, plotly, folium, Jupyter, Git y GitHub.
+Python, pandas, numpy, matplotlib, seaborn, plotly,Git y GitHub.
 
 ### Consideraciones éticas y legales
 
