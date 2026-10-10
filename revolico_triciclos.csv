@@ -1,36 +1,36 @@
-precio,tipo_combustion,municipio
-5950,de combustión,Centro Habana
-3490,eléctrico,
-3650,eléctrico,Centro Habana
-5350,panel solar,Centro Habana
-4850,eléctrico,Centro Habana
-4700,eléctrico,Habana Vieja
-4450,híbrido,Centro Habana
-5700,eléctrico,Plaza
-4900,eléctrico,Centro Habana
-4850,eléctrico,Playa
-4850,eléctrico,Centro Habana
-5500,eléctrico,
-5100,eléctrico,Diez de Octubre
-4800,eléctrico,Plaza
-5300,eléctrico,Arroyo Naranjo
-4700,eléctrico,
-3600,eléctrico,Plaza
-3750,eléctrico,Marianao
-5300,panel solar,Cerro
-3600,eléctrico,Playa
-5800,panel solar,Playa
-5900,de combustión,Centro Habana
-5690,eléctrico,Centro Habana
-4800,eléctrico,Playa
-5350,eléctrico,Centro Habana
-3500,eléctrico,Plaza
-5650,panel solar,Centro Habana
-5100,eléctrico,Centro Habana
-6900,panel solar,Playa
-4250,eléctrico,Centro Habana
-5300,eléctrico,Cerro
-5300,eléctrico,Cerro
-5550,panel solar,Playa
-5500,panel solar,Playa
-3900,eléctrico,Centro Habana
+precio,tipo_combustion,municipio,estado
+5950,de combustión,Centro Habana,no especifica
+3490,eléctrico,,no especifica
+3650,eléctrico,Centro Habana,no especifica
+5350,panel solar,Centro Habana,no especifica
+4850,eléctrico,Centro Habana,no especifica
+4700,eléctrico,Habana Vieja,no especifica
+4450,híbrido,Centro Habana,no especifica
+5700,eléctrico,Plaza,no especifica
+4900,eléctrico,Centro Habana,no especifica
+4850,eléctrico,Playa,no especifica
+4850,eléctrico,Centro Habana,no especifica
+5500,eléctrico,,no especifica
+5100,eléctrico,Diez de Octubre,no especifica
+4800,eléctrico,Plaza,no especifica
+5300,eléctrico,Arroyo Naranjo,no especifica
+4700,eléctrico,,no especifica
+3600,eléctrico,Plaza,nuevo
+3750,eléctrico,Marianao,no especifica
+5300,panel solar,Cerro,nuevo
+3600,eléctrico,Playa,no especifica
+5800,panel solar,Playa,nuevo
+5900,de combustión,Centro Habana,no especifica
+5690,eléctrico,Centro Habana,no especifica
+4800,eléctrico,Playa,no especifica
+5350,eléctrico,Centro Habana,no especifica
+3500,eléctrico,Plaza,no especifica
+5650,panel solar,Centro Habana,no especifica
+5100,eléctrico,Centro Habana,no especifica
+6900,panel solar,Playa,no especifica
+4250,eléctrico,Centro Habana,no especifica
+5300,eléctrico,Cerro,no especifica
+5300,eléctrico,Cerro,no especifica
+5550,panel solar,Playa,no especifica
+5500,panel solar,Playa,no especifica
+3900,eléctrico,Centro Habana,de uso
