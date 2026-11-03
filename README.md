@@ -11,7 +11,6 @@ Analizar el mercado de venta de triciclos en La Habana, Cuba, integrando datos d
 - Describir la distribución de precios según tipo de propulsión.
 - Caracterizar el perfil de compradores, conductores y propietarios.
 - Estimar costos operativos, ingresos y tiempo de recuperación de la inversión.
-- Identificar los tipos de propulsión más ofertados y su relación con el uso principal.
 - Explorar la relación entre el auge de los triciclos y el contexto económico del país.
 - Documentar limitaciones, sesgos y consideraciones éticas del estudio.
 
