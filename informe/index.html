@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triciclos en La Habana · Informe de mercado, precios y rentabilidad</title>
+<meta name="description" content="Informe integrado sobre la venta de triciclos en La Habana: oferta, precios por tipo de propulsión, financiamiento, rentabilidad y contexto económico. 53 registros de tres fuentes y modelo financiero de escenarios.">
+<meta name="author" content="Proyecto CD · Análisis de datos">
+<meta name="theme-color" content="#0f766e">
+<link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+<header class="barra">
+  <div class="barra__interior">
+    <div class="barra__marca"><span class="barra__punto"></span><span>Triciclos · La Habana</span></div>
+    <nav class="barra__nav" aria-label="Secciones del informe">
+      <a href="#resumen">Resumen</a>
+      <a href="#problema">Problema</a>
+      <a href="#metodologia">Método</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#precios">Precios</a>
+      <a href="#fuentes">Fuente y territorio</a>
+      <a href="#financiamiento">Financiamiento</a>
+      <a href="#rentabilidad">Rentabilidad</a>
+      <a href="#contexto">Contexto</a>
+      <a href="#entrevistas">Entrevistas</a>
+      <a href="#etica">Ética</a>
+      <a href="#reproducir">Datos</a>
+      <a href="#conclusiones">Conclusiones</a>
+    </nav>
+  </div>
+</header>
+
+<section class="portada" id="inicio">
+  <div class="portada__interior">
+    <span class="portada__etiqueta">Informe de investigación · versión 1.0</span>
+    <h1>Triciclos en La Habana: <em>precio, propulsión y rentabilidad</em> de un mercado en expansión</h1>
+    <p class="portada__bajada">
+      Integración de anuncios clasificados, catálogo de importadores y cotizaciones de agencias
+      para caracterizar la oferta de triciclos, su distribución de precios y el tiempo de
+      recuperación de la inversión, con un modelo financiero de escenarios y una lectura del
+      contexto económico cubano.
+    </p>
+    <div class="portada__meta">
+      <span><strong>Universo analizado:</strong> 53 registros de oferta</span>
+      <span><strong>Fuentes:</strong> revolico · Libro1 · cubancargos</span>
+      <span><strong>Cierre de datos:</strong> 4 de noviembre de 2026</span>
+      <span><strong>Moneda de referencia:</strong> USD</span>
+    </div>
+    <div class="kpis">
+      
+<div class="kpi"><div class="kpi__valor">53</div><div class="kpi__etiqueta">registros de oferta de tres fuentes</div></div>
+<div class="kpi"><div class="kpi__valor">$4.900 <small>USD</small></div><div class="kpi__etiqueta">precio mediano · rango $3.490–$6.900</div></div>
+<div class="kpi"><div class="kpi__valor">56.6 %</div><div class="kpi__etiqueta">de la oferta es eléctrica</div></div>
+<div class="kpi"><div class="kpi__valor">7–69 <small>meses</small></div><div class="kpi__etiqueta">recuperación estimada según escenario</div></div>
+
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ============================================================ 01 -->
+<section class="seccion" id="resumen">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">01</div>
+    <div>
+      <h2>Resumen ejecutivo</h2>
+      <p class="seccion__entrada">Cuatro cifras y cinco ideas que resumen qué se sabe hoy sobre el mercado de triciclos en La Habana con los datos disponibles.</p>
+    </div>
+  </div>
+
+  <div class="rejilla rejilla--2">
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">$4.900 <small>USD</small></div>
+      <h4>Precio mediano del mercado</h4>
+      <p>La mitad de los 53 registros está por debajo de ese valor; el rango completo va de $3.490 a $6.900.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">56,6 % <small>de la oferta</small></div>
+      <h4>El eléctrico domina el catálogo</h4>
+      <p>30 de 53 registros son eléctricos, y concentran la mayor amplitud de precios (CV 16,2 %).</p>
+    </div>
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">$4.626</div>
+      <h4>El híbrido es el más barato y homogéneo</h4>
+      <p>Mediana de $4.626 y coeficiente de variación de 7,0 %, el más bajo de los cuatro tipos.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">p = 0,0016</div>
+      <h4>Las diferencias de precio son significativas</h4>
+      <p>Kruskal-Wallis sobre los cuatro tipos rechaza la igualdad de distribuciones; el par panel solar–híbrido resiste la corrección por comparaciones múltiples.</p>
+    </div>
+  </div>
+
+  <div class="lectura">
+    <h4>Lo esencial en cinco puntos</h4>
+    <ol>
+      <li><strong>Dos escalones de precio.</strong> Combustión ($5.875) y panel solar ($5.500) se ubican por encima de eléctrico ($4.825) e híbrido ($4.626); la brecha entre escalones ronda los $870 y $1.050.</li>
+      <li><strong>La propulsión explica poco del precio.</strong> La dispersión dentro de cada tipo es grande: el eléctrico va de $3.490 a $6.000 y su coeficiente de variación (16,2 %) duplica el del híbrido.</li>
+      <li><strong>El precio no es de transacción.</strong> Son precios de oferta (anuncios y catálogos), no precios efectivamente pagados; no se dispone todavía de una serie temporal ni de descuentos observados.</li>
+      <li><strong>La asequibilidad es el hallazgo de contexto.</strong> Un triciclo eléctrico equivale a 48,6 años de salario medio habanero ahorrado al 100 %, lo que hace estructuralmente necesario el financiamiento externo o las remesas.</li>
+      <li><strong>La rentabilidad es un modelo, no una medición.</strong> Con los supuestos del proyecto, la recuperación va de 7 a 69 meses según escenario; la incertidumbre es demasiado alta para conclusiones definitivas sin trabajo de campo.</li>
+    </ol>
+  </div>
+
+  <h3>Estado de cumplimiento de los objetivos</h3>
+  <div class="tabla-envoltura">
+    <table class="tabla--compacta">
+      <caption>Objetivos específicos del proyecto y grado de avance con la evidencia disponible</caption>
+      <thead>
+        <tr><th>Objetivo</th><th>Evidencia</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Recolectar y documentar la oferta</td><td>53 registros, 3 fuentes, diccionario de variables</td><td><span class="insignia insignia--ok">Cubierto</span></td></tr>
+        <tr><td>Distribución de precios por propulsión</td><td>Estadísticos, boxplots, histogramas y contrastes</td><td><span class="insignia insignia--ok">Cubierto</span></td></tr>
+        <tr><td>Perfil de compradores, conductores y propietarios</td><td>Inferencias desde la oferta + instrumento listo; sin respuestas de campo</td><td><span class="insignia insignia--parcial">Parcial</span></td></tr>
+        <tr><td>Costos operativos, ingresos y recuperación</td><td>Modelo paramétrico de escenarios y análisis de sensibilidad</td><td><span class="insignia insignia--parcial">Modelo</span></td></tr>
+        <tr><td>Relación con el contexto económico</td><td>Indicadores del modelo y lectura exploratoria; faltan series oficiales actualizadas</td><td><span class="insignia insignia--parcial">Exploratorio</span></td></tr>
+        <tr><td>Limitaciones, sesgos y ética</td><td>Sección específica y protocolo de anonimización</td><td><span class="insignia insignia--ok">Cubierto</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section class="seccion" id="problema">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">02</div>
+    <div>
+      <h2>Problema y objetivos</h2>
+      <p class="seccion__entrada">Por qué el mercado de triciclos importa y qué preguntas guía esta investigación.</p>
+    </div>
+  </div>
+
+  <p>
+    El transporte público en La Habana enfrenta limitaciones de capacidad, frecuencia, disponibilidad
+    de combustible y condiciones de servicio. En ese contexto, los triciclos —eléctricos, híbridos o
+    de gasolina— ganaron protagonismo como medio alternativo para pasajeros, carga y reparto. La
+    información sobre este mercado es, sin embargo, escasa, dispersa y heterogénea: no se conoce con
+    precisión cuánto cuestan, qué propulsión predomina, quién los compra, cómo se financian, cuánto
+    tardan en recuperar la inversión ni qué relación tiene su auge con la crisis económica.
+  </p>
+  <p>
+    El problema central es la <strong>ausencia de una caracterización cuantitativa y cualitativa</strong>
+    que permita entender la venta y el uso de triciclos en La Habana y evaluar su rentabilidad como
+    respuesta al contexto económico actual. A ello se suma que el mercado es en gran medida informal,
+    opera con múltiples monedas y carece de registros sistematizados.
+  </p>
+
+  <div class="rejilla rejilla--2">
+    <div class="tarjeta">
+      <h4>Objetivo general</h4>
+      <p>Analizar el mercado de venta de triciclos en La Habana integrando anuncios clasificados,
+      entrevistas a conductores y propietarios e indicadores socioeconómicos, para caracterizar
+      precios, propulsión, financiamiento, rentabilidad y su relación con el contexto económico.</p>
+    </div>
+    <div class="tarjeta">
+      <h4>Preguntas de investigación</h4>
+      <p>¿Cuánto cuesta un triciclo y cómo varía por propulsión? ¿Quién compra y con qué recursos?
+      ¿Cuánto deja operarlo y en cuánto tiempo se recupera? ¿Qué factores macroeconómicos explican
+      su auge?</p>
+    </div>
+  </div>
+
+  <h3>Objetivos específicos</h3>
+  <ol class="pasos">
+    <li>Recolectar y documentar datos sobre la oferta de triciclos en La Habana.</li>
+    <li>Describir la distribución de precios según tipo de propulsión.</li>
+    <li>Caracterizar el perfil de compradores, conductores y propietarios.</li>
+    <li>Estimar costos operativos, ingresos y tiempo de recuperación de la inversión.</li>
+    <li>Explorar la relación entre el auge de los triciclos y el contexto económico del país.</li>
+    <li>Documentar limitaciones, sesgos y consideraciones éticas del estudio.</li>
+  </ol>
+</section>
+
+<!-- ============================================================ 03 -->
+<section class="seccion" id="metodologia">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">03</div>
+    <div>
+      <h2>Metodología y datos</h2>
+      <p class="seccion__entrada">Enfoque mixto, tres fuentes cuantitativas, un instrumento cualitativo y reglas explícitas de normalización.</p>
+    </div>
+  </div>
+
+  <h3>Diseño</h3>
+  <p>
+    El estudio adopta un enfoque mixto. La parte cuantitativa combina el <em>scraping</em> y la
+    revisión de anuncios clasificados con un catálogo de importador y una libreta de cotizaciones de
+    agencias; la parte cualitativa se apoya en un cuestionario semiestructurado a conductores
+    y propietarios, cuyo trabajo de campo está pendiente.
+  </p>
+
+  <div class="tabla-envoltura">
+    <table>
+      <caption>Fuentes de datos cuantitativas</caption>
+      <thead>
+        <tr><th>Fuente</th><th>Naturaleza</th><th class="num">Registros</th><th>Período</th><th>Variables principales</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>revolico</strong></td>
+          <td>Anuncios clasificados (compraventa entre particulares y mipymes)</td>
+          <td class="num">35</td>
+          <td>oct. 2026</td>
+          <td>precio, propulsión, municipio, condición</td>
+        </tr>
+        <tr>
+          <td><strong>Libro1</strong></td>
+          <td>Cotizaciones de agencias y operaciones persona a persona</td>
+          <td class="num">14</td>
+          <td>2025–2026</td>
+          <td>precio, propulsión, vía de adquisición, financiamiento, plazo, uso</td>
+        </tr>
+        <tr>
+          <td><strong>cubancargos</strong></td>
+          <td>Catálogo de importador con envío a Cuba</td>
+          <td class="num">4</td>
+          <td>nov. 2026</td>
+          <td>precio, propulsión, motor, batería, autonomía, capacidad, garantía</td>
+        </tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Total armonizado</td><td class="num">53</td><td colspan="2">53 precios de oferta en USD</td></tr></tfoot>
+    </table>
+  </div>
+
+  <h3>Limpieza y normalización</h3>
+  <ul>
+    <li><strong>Moneda.</strong> Todos los precios se expresan en USD. Los anuncios ya estaban en USD; el catálogo también; las cotizaciones se registraron en USD. El tipo de cambio solo interviene en el modelo de rentabilidad (900 CUP/USD, referencia informal de El Toque, editable en la calculadora).</li>
+    <li><strong>Propulsión.</strong> Se normalizaron etiquetas dañadas por codificación («de combustiA3n», «elAcctrico», «hA-brido») a las cuatro categorías del informe: combustión, eléctrico, híbrido y panel solar. Esta última se trata como tecnología paralela de apoyo solar, no como propulsión independiente.</li>
+    <li><strong>Exclusiones documentadas.</strong> En Libro1 se descartaron 2 celdas que no son observaciones de mercado: una fila de promedio (5.119,23) sin propulsión y una celda suelta al final de la hoja (76.169,23). En cubancargos se descartaron las filas de especificaciones y se conservó el precio del producto, no el total con envío.</li>
+    <li><strong>Duplicados.</strong> No se detectaron anuncios repetidos; el identificador de cada registro conserva su origen.</li>
+    <li><strong>Datos personales.</strong> No se conservan teléfonos, nombres ni enlaces a perfiles de vendedores en el dataset publicado.</li>
+  </ul>
+
+  <h3>Cobertura de variables frente al diseño original</h3>
+  <p>
+    El diseño preveía doce variables por anuncio. La tabla siguiente documenta qué se obtuvo realmente:
+    es la principal brecha de datos del proyecto y la prioridad inmediata de recolección.
+  </p>
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Matriz de cobertura de las variables previstas en el diseño metodológico</caption>
+<thead><tr>
+<th>Variable</th>
+<th>revolico</th>
+<th>Libro1</th>
+<th>cubancargos</th>
+<th>Cobertura</th>
+</tr></thead><tbody>
+<tr>
+<td>Precio</td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td>Disponible</td>
+</tr>
+<tr>
+<td>Moneda</td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td>Disponible (USD)</td>
+</tr>
+<tr>
+<td>Tipo de propulsión</td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td>Disponible</td>
+</tr>
+<tr>
+<td>Municipio</td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Condición (nuevo/usado)</td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Vía de adquisición / vendedor</td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Financiamiento y plazo</td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Marca</td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Modelo</td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Año del vehículo</td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td>Ausente</td>
+</tr>
+<tr>
+<td>Capacidad de carga</td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Descripción / autonomía</td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--ok">Sí</span></td>
+<td>Parcial</td>
+</tr>
+<tr>
+<td>Fecha de publicación</td>
+<td><span class="insignia insignia--parcial">Parcial</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td><span class="insignia insignia--gris">No</span></td>
+<td>Ausente</td>
+</tr>
+</tbody>
+</table></div>
+
+  <div class="aviso aviso--alerta">
+    <div class="aviso__icono">⚠</div>
+    <div>
+      <p><strong>Cobertura desigual.</strong> Ninguna fuente contiene las doce variables a la vez. Fecha de publicación, marca, modelo, año y tipo de vendedor solo están disponibles de forma parcial o previa extracción manual, lo que impide hoy un análisis de series temporales y de depreciación por antigüedad.</p>
+    </div>
+  </div>
+
+  <h3>Herramientas</h3>
+  <p>Python (pandas, numpy, matplotlib), HTML/CSS/JavaScript para este informe, Git para el control de versiones. Los scripts y las tablas intermedias se incluyen en la sección de reproducibilidad.</p>
+</section>
+
+<!-- ============================================================ 04 -->
+<section class="seccion" id="oferta">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">04</div>
+    <div>
+      <h2>Composición de la oferta</h2>
+      <p class="seccion__entrada">Qué se vende, en qué proporción y cómo cambia la mezcla según la fuente.</p>
+    </div>
+  </div>
+
+  <div class="tabla-envoltura">
+<table class="">
+<caption>Registros por fuente y tipo de propulsión (porcentaje sobre la fila)</caption>
+<thead><tr>
+<th>Fuente</th>
+<th class="num">Combustión</th>
+<th class="num">Eléctrico</th>
+<th class="num">Híbrido</th>
+<th class="num">Panel solar</th>
+<th class="num">Total</th>
+</tr></thead><tbody>
+<tr>
+<td>Libro1</td>
+<td class="num">4 <span class='etiqueta-estado'>(28,6 %)</span></td>
+<td class="num">4 <span class='etiqueta-estado'>(28,6 %)</span></td>
+<td class="num">4 <span class='etiqueta-estado'>(28,6 %)</span></td>
+<td class="num">2 <span class='etiqueta-estado'>(14,3 %)</span></td>
+<td class="num"><strong>14</strong></td>
+</tr>
+<tr>
+<td>revolico</td>
+<td class="num">2 <span class='etiqueta-estado'>(5,7 %)</span></td>
+<td class="num">25 <span class='etiqueta-estado'>(71,4 %)</span></td>
+<td class="num">1 <span class='etiqueta-estado'>(2,9 %)</span></td>
+<td class="num">7 <span class='etiqueta-estado'>(20,0 %)</span></td>
+<td class="num"><strong>35</strong></td>
+</tr>
+<tr>
+<td>cubancargos</td>
+<td class="num">0 <span class='etiqueta-estado'>(0,0 %)</span></td>
+<td class="num">1 <span class='etiqueta-estado'>(25,0 %)</span></td>
+<td class="num">3 <span class='etiqueta-estado'>(75,0 %)</span></td>
+<td class="num">0 <span class='etiqueta-estado'>(0,0 %)</span></td>
+<td class="num"><strong>4</strong></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>6</strong> <span class='etiqueta-estado'>(11,3 %)</span></td>
+<td class="num"><strong>30</strong> <span class='etiqueta-estado'>(56,6 %)</span></td>
+<td class="num"><strong>8</strong> <span class='etiqueta-estado'>(15,1 %)</span></td>
+<td class="num"><strong>9</strong> <span class='etiqueta-estado'>(17,0 %)</span></td>
+<td class="num"><strong>53</strong></td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/composicion.png" alt="Composición de la oferta por fuente y tipo de propulsión">
+    <figcaption><strong>Figura 1.</strong> Composición de los 53 registros por fuente y tipo de propulsión. La barra superior agrega el total. Elaboración propia con datos de revolico, Libro1 y cubancargos.</figcaption>
+  </figure>
+
+  <div class="lectura">
+    <h4>Lectura</h4>
+    <p>
+      El eléctrico concentra el 56,6 % de la oferta (30 de 53), impulsado casi por
+      completo por los clasificados: en revolico son 25 de 35 anuncios. La mezcla cambia según el canal:
+      Libro1 está equilibrado (4 eléctricos, 4 híbridos, 4 de combustión y 2 de panel solar), mientras
+      cubancargos solo publica 3 híbridos y 1 eléctrico. No hay ninguna ficha de gasolina en el catálogo
+      del importador, pese a que su web anuncia «+10 modelos» de gasolina.
+    </p>
+    <p>
+      Esa diferencia no es solo de composición: los canales parecen segmentos distintos del mercado.
+      Los clasificados son el espacio del particular y la mipyme; Libro1 recoge la vía de la agencia y
+      el financiamiento; cubancargos representa la importación formal con entrega a Cuba.
+    </p>
+  </div>
+
+  <div class="aviso aviso--info">
+    <div class="aviso__icono">ℹ</div>
+    <div>
+      <p><strong>Sobre la categoría «panel solar».</strong> En este informe se clasifica como una tecnología paralela al eléctrico y al híbrido: no se trata de una propulsión independiente, sino de una variante con apoyo solar (el PORTO BELLO es un híbrido con panel de 580 W que el importador clasifica como «híbrido»). Se mantiene como categoría propia porque así aparece en los anuncios y porque esa especificación es de gran interés al comprar: incide en autonomía, costo y mantenimiento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section class="seccion" id="precios">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">05</div>
+    <div>
+      <h2>Distribución de precios por propulsión</h2>
+      <p class="seccion__entrada">El núcleo cuantitativo del informe: nivel, dispersión, forma y contrastes.</p>
+    </div>
+  </div>
+
+  <h3>Estadísticos descriptivos</h3>
+  <div class="tabla-envoltura">
+<table class="">
+<caption>Estadísticos de precio (USD) por tipo de propulsión. Datos: 53 registros de tres fuentes</caption>
+<thead><tr>
+<th>Propulsión</th>
+<th class="num">n</th>
+<th class="num">%</th>
+<th class="num">Media</th>
+<th class="num">Mediana</th>
+<th class="num">Desv. est.</th>
+<th class="num">CV</th>
+<th class="num">Mín</th>
+<th class="num">Q1</th>
+<th class="num">Q3</th>
+<th class="num">Máx</th>
+</tr></thead><tbody>
+<tr>
+<td>Combustión</td>
+<td class="num">6</td>
+<td class="num">11,3 %</td>
+<td class="num">$5.450</td>
+<td class="num"><strong>$5.875</strong></td>
+<td class="num">$738</td>
+<td class="num">13,5 %</td>
+<td class="num">$4.500</td>
+<td class="num">$4.838</td>
+<td class="num">$5.938</td>
+<td class="num">$6.000</td>
+</tr>
+<tr>
+<td>Panel solar</td>
+<td class="num">9</td>
+<td class="num">17,0 %</td>
+<td class="num">$5.617</td>
+<td class="num"><strong>$5.500</strong></td>
+<td class="num">$532</td>
+<td class="num">9,5 %</td>
+<td class="num">$5.000</td>
+<td class="num">$5.350</td>
+<td class="num">$5.650</td>
+<td class="num">$6.900</td>
+</tr>
+<tr>
+<td>Eléctrico</td>
+<td class="num">30</td>
+<td class="num">56,6 %</td>
+<td class="num">$4.712</td>
+<td class="num"><strong>$4.825</strong></td>
+<td class="num">$764</td>
+<td class="num">16,2 %</td>
+<td class="num">$3.490</td>
+<td class="num">$3.988</td>
+<td class="num">$5.300</td>
+<td class="num">$6.000</td>
+</tr>
+<tr>
+<td>Híbrido</td>
+<td class="num">8</td>
+<td class="num">15,1 %</td>
+<td class="num">$4.688</td>
+<td class="num"><strong>$4.626</strong></td>
+<td class="num">$327</td>
+<td class="num">7,0 %</td>
+<td class="num">$4.286</td>
+<td class="num">$4.488</td>
+<td class="num">$4.825</td>
+<td class="num">$5.320</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td class="num"><strong>53</strong></td>
+<td class="num">100,0 %</td>
+<td class="num">$4.946</td>
+<td class="num"><strong>$4.900</strong></td>
+<td class="num">$765</td>
+<td class="num">15,5 %</td>
+<td class="num">$3.490</td>
+<td class="num">$4.500</td>
+<td class="num">$5.500</td>
+<td class="num">$6.900</td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/caja_tipos.png" alt="Boxplot de precios por tipo de propulsión">
+    <figcaption><strong>Figura 2.</strong> Distribución de precios por propulsión (53 registros). Caja = rango intercuartílico; línea central = mediana; puntos = observaciones individuales.</figcaption>
+  </figure>
+
+  <figure class="figura">
+    <img src="assets/img/histograma.png" alt="Histogramas de precios por tipo de propulsión">
+    <figcaption><strong>Figura 3.</strong> Forma de la distribución por tipo. La línea vertical marca la mediana de cada grupo. El eléctrico muestra dos concentraciones (gama de entrada y gama media); la combustión es claramente bimodal.</figcaption>
+  </figure>
+
+  <h3>Bandas de precio</h3>
+  <figure class="figura">
+    <img src="assets/img/bandas.png" alt="Distribución porcentual por bandas de precio y tipo">
+    <figcaption><strong>Figura 4.</strong> Proporción de registros en cada banda de precio, por tipo de propulsión. Permite comparar la forma sin que el tamaño del grupo distorsione la lectura.</figcaption>
+  </figure>
+
+  <div class="lectura">
+    <h4>Qué muestra la forma</h4>
+    <p>
+      El <strong>eléctrico</strong> es el grupo más numeroso y el más disperso: su rango intercuartílico
+      va de $3.988 a $5.300 y su coeficiente de variación (16,2 %) es el más alto.
+      La distribución es bimodal: una gama de entrada por debajo de $4.300, casi toda procedente de
+      clasificados, y una gama media entre $4.700 y $5.700.
+    </p>
+    <p>
+      El <strong>híbrido</strong> es el más compacto (CV 7,0 %, rango $4.286–$5.320).
+      Los tres modelos del catálogo (4.286, 4.751 y 5.320) caen dentro de la banda ya observada en
+      las otras fuentes, lo que refuerza la consistencia del grupo.
+    </p>
+    <p>
+      El <strong>panel solar</strong> se comporta como gama alta estable: 8 de sus 9 registros se ubican en
+      $5.000 o más y el único valor extremo es $6.900, también el máximo global.
+      La <strong>combustión</strong>, con solo 6 casos, es la más difícil de interpretar: mezcla
+      dos segmentos (dos unidades a $4.500 y dos entre $5.850 y $6.000 en Libro1, frente a $5.900–5.950
+      en revolico). Su mediana alta depende de muy pocas observaciones.
+    </p>
+  </div>
+
+  <h3>Contrastes estadísticos</h3>
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Contrastes no paramétricos (20.000 permutaciones; corrección por empates en Kruskal-Wallis)</caption>
+<thead><tr>
+<th>Prueba</th>
+<th>Hipótesis nula</th>
+<th class="num">Estadístico</th>
+<th class="num">p</th>
+<th>Decisión</th>
+</tr></thead><tbody>
+<tr>
+<td>Kruskal-Wallis</td>
+<td>Igualdad de distribuciones entre los 4 tipos</td>
+<td class="num">H = 13,56</td>
+<td class="num">0,0016</td>
+<td><span class="insignia insignia--parcial">Se rechaza</span></td>
+</tr>
+<tr>
+<td>Brown-Forsythe</td>
+<td>Igualdad de varianzas entre los 4 tipos</td>
+<td class="num">F = 1,83</td>
+<td class="num">0,115</td>
+<td><span class="insignia insignia--ok">No se rechaza</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  <p>
+    El contraste de Kruskal-Wallis rechaza la igualdad de distribuciones (H = 13,56, p = 0,0016
+    con 20.000 permutaciones; corrección por empates aplicada). La prueba de Brown-Forsythe no encuentra
+    evidencia de varianzas distintas (F = 1,83, p = 0,115), de modo que las diferencias son de
+    nivel, no de dispersión.
+  </p>
+
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Diferencias de medianas por pares (permutaciones sobre la diferencia de medianas)</caption>
+<thead><tr>
+<th>Par de comparación</th>
+<th class="num">Δ mediana</th>
+<th class="num">p</th>
+<th class="num">n</th>
+<th>Bonferroni (α = 0,0083)</th>
+</tr></thead><tbody>
+<tr>
+<td>Híbrido vs Panel solar</td>
+<td class="num">$-874</td>
+<td class="num">0,0047</td>
+<td class="num">8 / 9</td>
+<td><span class="insignia insignia--ok">Sobrevive</span></td>
+</tr>
+<tr>
+<td>Combustión vs Eléctrico</td>
+<td class="num">$1.050</td>
+<td class="num">0,0152</td>
+<td class="num">6 / 30</td>
+<td><span class="insignia insignia--gris">No</span></td>
+</tr>
+<tr>
+<td>Combustión vs Híbrido</td>
+<td class="num">$1.250</td>
+<td class="num">0,0162</td>
+<td class="num">6 / 8</td>
+<td><span class="insignia insignia--gris">No</span></td>
+</tr>
+<tr>
+<td>Eléctrico vs Panel solar</td>
+<td class="num">$-675</td>
+<td class="num">0,0465</td>
+<td class="num">30 / 9</td>
+<td><span class="insignia insignia--gris">No</span></td>
+</tr>
+<tr>
+<td>Combustión vs Panel solar</td>
+<td class="num">$375</td>
+<td class="num">0,1985</td>
+<td class="num">6 / 9</td>
+<td><span class="insignia insignia--gris">No</span></td>
+</tr>
+<tr>
+<td>Eléctrico vs Híbrido</td>
+<td class="num">$200</td>
+<td class="num">0,4218</td>
+<td class="num">30 / 8</td>
+<td><span class="insignia insignia--gris">No</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  <div class="aviso aviso--alerta">
+    <div class="aviso__icono">⚠</div>
+    <div>
+      <p><strong>Precaución con los pares.</strong> Hay seis comparaciones y grupos muy desbalanceados (de 6 a 30 casos). Con corrección de Bonferroni (α = 0,0083) solo sobrevive <em>panel solar frente a híbrido</em> (p = 0,0043). Las demás diferencias deben leerse como indicios consistentes, no como resultados confirmatorios.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section class="seccion" id="fuentes">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">06</div>
+    <div>
+      <h2>Fuente y territorio</h2>
+      <p class="seccion__entrada">El precio no solo depende de la propulsión: el canal de venta y el municipio también pesan.</p>
+    </div>
+  </div>
+
+  <h3>Medianas por fuente</h3>
+  <div class="tabla-envoltura">
+<table class="">
+<caption>Precio mediano por tipo de propulsión y fuente (n entre paréntesis)</caption>
+<thead><tr>
+<th>Propulsión</th>
+<th class="num">Libro1</th>
+<th class="num">revolico</th>
+<th class="num">cubancargos</th>
+</tr></thead><tbody>
+<tr>
+<td>Combustión</td>
+<td class="num">$5.175 <span class='etiqueta-estado'>(n=4)</span></td>
+<td class="num">$5.925 <span class='etiqueta-estado'>(n=2)</span></td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>Panel solar</td>
+<td class="num">$5.250 <span class='etiqueta-estado'>(n=2)</span></td>
+<td class="num">$5.550 <span class='etiqueta-estado'>(n=7)</span></td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>Eléctrico</td>
+<td class="num">$5.250 <span class='etiqueta-estado'>(n=4)</span></td>
+<td class="num">$4.850 <span class='etiqueta-estado'>(n=25)</span></td>
+<td class="num">$3.842 <span class='etiqueta-estado'>(n=1)</span></td>
+</tr>
+<tr>
+<td>Híbrido</td>
+<td class="num">$4.650 <span class='etiqueta-estado'>(n=4)</span></td>
+<td class="num">$4.450 <span class='etiqueta-estado'>(n=1)</span></td>
+<td class="num">$4.751 <span class='etiqueta-estado'>(n=3)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/fuentes.png" alt="Medianas de precio por fuente y tipo de propulsión">
+    <figcaption><strong>Figura 5.</strong> Mediana de precio por tipo de propulsión y fuente. El número sobre cada barra indica el tamaño del grupo. Los grupos con menos de tres casos deben leerse como anécdota.</figcaption>
+  </figure>
+
+  <p>
+    El canal importa. Para el mismo tipo eléctrico, la mediana de revolico ($4.850) supera en más de
+    $1.000 a la del catálogo del importador ($3.842), y Libro1 se sitúa en $5.250. En híbridos, en
+    cambio, las tres fuentes convergen en una banda estrecha ($4.450–$4.751). Esto sugiere que el
+    sobreprecio del canal informal se concentra en el segmento eléctrico de mayor rotación.
+  </p>
+
+  <h3>Distribución territorial</h3>
+  <p>
+    Solo los anuncios de revolico aportan municipio (32 de 35 registros). La muestra se concentra en
+    Centro Habana y Playa, lo que refleja tanto la geografía de la oferta como el sesgo de recolección.
+  </p>
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Precios por municipio en los anuncios de revolico (32 de 35 registros con dato)</caption>
+<thead><tr>
+<th>Municipio</th>
+<th class="num">n</th>
+<th class="num">Mediana</th>
+<th class="num">Mín</th>
+<th class="num">Máx</th>
+<th class="num">% con dato</th>
+</tr></thead><tbody>
+<tr>
+<td>Playa</td>
+<td class="num">7</td>
+<td class="num">$5.500</td>
+<td class="num">$3.600</td>
+<td class="num">$6.900</td>
+<td class="num">21,9 %</td>
+</tr>
+<tr>
+<td>Arroyo Naranjo</td>
+<td class="num">1</td>
+<td class="num">$5.300</td>
+<td class="num">$5.300</td>
+<td class="num">$5.300</td>
+<td class="num">3,1 %</td>
+</tr>
+<tr>
+<td>Cerro</td>
+<td class="num">3</td>
+<td class="num">$5.300</td>
+<td class="num">$5.300</td>
+<td class="num">$5.300</td>
+<td class="num">9,4 %</td>
+</tr>
+<tr>
+<td>Diez de Octubre</td>
+<td class="num">1</td>
+<td class="num">$5.100</td>
+<td class="num">$5.100</td>
+<td class="num">$5.100</td>
+<td class="num">3,1 %</td>
+</tr>
+<tr>
+<td>Centro Habana</td>
+<td class="num">14</td>
+<td class="num">$5.000</td>
+<td class="num">$3.650</td>
+<td class="num">$5.950</td>
+<td class="num">43,8 %</td>
+</tr>
+<tr>
+<td>Habana Vieja</td>
+<td class="num">1</td>
+<td class="num">$4.700</td>
+<td class="num">$4.700</td>
+<td class="num">$4.700</td>
+<td class="num">3,1 %</td>
+</tr>
+<tr>
+<td>Plaza</td>
+<td class="num">4</td>
+<td class="num">$4.200</td>
+<td class="num">$3.500</td>
+<td class="num">$5.700</td>
+<td class="num">12,5 %</td>
+</tr>
+<tr>
+<td>Marianao</td>
+<td class="num">1</td>
+<td class="num">$3.750</td>
+<td class="num">$3.750</td>
+<td class="num">$3.750</td>
+<td class="num">3,1 %</td>
+</tr>
+<tr>
+<td><strong>Sin municipio</strong></td>
+<td class="num">3</td>
+<td class="num">—</td>
+<td class="num">—</td>
+<td class="num">—</td>
+<td class="num">—</td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/municipios.png" alt="Precio mediano por municipio en La Habana">
+    <figcaption><strong>Figura 6.</strong> Precio mediano por municipio en los anuncios de revolico. El número junto a la barra es el tamaño del grupo; los municipios con un solo anuncio no permiten inferencia.</figcaption>
+  </figure>
+
+  <div class="aviso aviso--info">
+    <div class="aviso__icono">ℹ</div>
+    <div>
+      <p><strong>No confundir geografía con causalidad.</strong> Centro Habana y Playa concentran la oferta y también los precios más altos, pero el municipio está correlacionado con el tipo de propulsión y con el tipo de vendedor. Con esta muestra no es posible separar ambos efectos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 07 -->
+<section class="seccion" id="financiamiento">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">07</div>
+    <div>
+      <h2>Financiamiento y perfil del comprador</h2>
+      <p class="seccion__entrada">Lo que la oferta permite inferir sobre cómo se paga un triciclo y quién lo usa, y lo que todavía falta preguntar.</p>
+    </div>
+  </div>
+
+  <div class="rejilla rejilla--3">
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">64 %</div>
+      <h4>Compra con ayuda exterior</h4>
+      <p>9 de los 14 registros de Libro1 declaran financiamiento con ayuda de familiares o personas en el exterior.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">43 %</div>
+      <h4>Vía de agencia</h4>
+      <p>6 de 14 operaciones se hicieron a través de una agencia en Cuba o en EE. UU.; el resto fue persona a persona u otra vía.</p>
+    </div>
+    <div class="tarjeta">
+      <div class="tarjeta__cifra">3 años</div>
+      <h4>Plazo típico de financiamiento</h4>
+      <p>Entre los registros con plazo declarado, el más frecuente es de 3 años; hay casos de 1, 1,5, 2 y 5 años.</p>
+    </div>
+  </div>
+
+  <figure class="figura">
+    <img src="assets/img/financiamiento.png" alt="Vía de adquisición, financiamiento y uso declarado en Libro1">
+    <figcaption><strong>Figura 7.</strong> Vía de adquisición, fuente de financiamiento y uso principal declarados en los 14 registros de Libro1. Categorías normalizadas; «sin dato» se muestra separado.</figcaption>
+  </figure>
+
+  <div class="lectura">
+    <h4>Perfil inferido (hipótesis, no medición)</h4>
+    <p>
+      El comprador típico que sugiere la oferta no es un asalariado que ahorra: es una persona con
+      acceso a divisas o a una red familiar en el exterior, que adquiere el vehículo mediante agencia
+      o persona a persona y lo destina a transporte público de pasajeros. Siete de los catorce casos de
+      Libro1 declaran uso «transporte de personas-público»; el resto se reparte entre uso personal,
+      carga y «otro».
+    </p>
+    <p>
+      Esta lectura es coherente con la brecha de asequibilidad que se documenta en la sección 09, pero
+      <strong>no sustituye el trabajo de campo</strong>: no hay todavía respuestas de conductores ni de
+      propietarios que permitan medir ingresos, gastos, accidentes o percepción del mercado.
+    </p>
+  </div>
+
+  <h3>Instrumento de entrevista</h3>
+  <p>
+    El cuestionario semiestructurado ya está diseñado (9 preguntas para conductores y propietarios).
+    Cubre vía de compra, precio pagado, expectativa de recuperación,
+    tenencia, forma de pago, uso, accidentes, percepción de rentabilidad y tipo de propulsión.
+  </p>
+  <div class="tabla-envoltura">
+    <table class="tabla--compacta">
+      <caption>Estructura del instrumento cualitativo</caption>
+      <thead><tr><th>Bloque</th><th>Preguntas</th><th>Variable que produce</th></tr></thead>
+      <tbody>
+        <tr><td>Compra</td><td>Vía, precio pagado, forma de pago, plazo</td><td>canal, precio de transacción, fuente de financiamiento</td></tr>
+        <tr><td>Tenencia y uso</td><td>Propietario o arrendado; uso principal</td><td>régimen de tenencia, destino del vehículo</td></tr>
+        <tr><td>Operación</td><td>Ingresos, gastos, accidentes</td><td>margen operativo, siniestralidad</td></tr>
+        <tr><td>Percepción</td><td>Rentabilidad esperada, tiempo de recuperación</td><td>expectativas y confianza en el mercado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aviso aviso--pendiente">
+    <div class="aviso__icono">●</div>
+    <div>
+      <p><strong>Estado: pendiente de campo.</strong> No se presentan respuestas de entrevistas porque no existen todavía. Publicar cifras inventadas o «ilustrativas» sería contrario al principio de transparencia del proyecto. La sección 10 detalla el plan de levantamiento y el consentimiento informado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 08 -->
+<section class="seccion" id="rentabilidad">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">08</div>
+    <div>
+      <h2>Rentabilidad y recuperación de la inversión</h2>
+      <p class="seccion__entrada">Un modelo de escenarios con supuestos explícitos y una calculadora para explorar la sensibilidad.</p>
+    </div>
+  </div>
+
+  <div class="aviso aviso--alerta">
+    <div class="aviso__icono">⚠</div>
+    <div>
+      <p><strong>Esto es un modelo, no una medición.</strong> Los ingresos y costos no provienen de entrevistas: son supuestos paramétricos calibrados con el precio de oferta y un margen de costos. Sirven para comparar tipos de vehículo y escenarios, no para afirmar cuánto gana un conductor real.</p>
+    </div>
+  </div>
+
+  <h3>Supuestos</h3>
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Parámetros del modelo y referencias de contexto</caption>
+<thead><tr>
+<th>Parámetro</th>
+<th>Valor</th>
+<th>Origen</th>
+<th>Estado</th>
+</tr></thead><tbody>
+<tr>
+<td>Salario medio mensual, La Habana</td>
+<td>7.442,2 CUP</td>
+<td>ONEI</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Tipo de cambio informal</td>
+<td>900 CUP/USD</td>
+<td>El Toque</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Inflación anual</td>
+<td>25,19 % (ago.) → 28,44 % (sep. 2026)</td>
+<td>Trading Economics · ONEI</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Salario equivalente en USD</td>
+<td>$8,27 / mes</td>
+<td>Cálculo propio</td>
+<td>Derivado</td>
+</tr>
+<tr>
+<td>Tarifa por pasaje</td>
+<td>200 / 450 / 650 CUP</td>
+<td>Conservador / moderado / favorable</td>
+<td>Supuesto</td>
+</tr>
+<tr>
+<td>Pasajeros por día</td>
+<td>20 / 30 / 40</td>
+<td>Conservador / moderado / favorable</td>
+<td>Supuesto</td>
+</tr>
+<tr>
+<td>Días trabajados al mes</td>
+<td>24 / 26 / 26</td>
+<td>Conservador / moderado / favorable</td>
+<td>Supuesto</td>
+</tr>
+<tr>
+<td>Costos operativos</td>
+<td>20 / 15 / 15 %</td>
+<td>Sobre ingreso bruto</td>
+<td>Supuesto</td>
+</tr>
+<tr>
+<td>Inversión inicial</td>
+<td>$4.626–$5.875 USD</td>
+<td>Mediana por tipo (sección 05)</td>
+<td>Dato de oferta</td>
+</tr>
+<tr>
+<td>Ventana de referencia</td>
+<td>60 meses</td>
+<td>Solo para la barra de la calculadora</td>
+<td>Convención</td>
+</tr>
+</tbody>
+</table></div>
+
+  <h3>Resultados por escenario</h3>
+  <div class="tabla-envoltura">
+<table class="">
+<caption>Estado de resultados mensual por escenario operativo</caption>
+<thead><tr>
+<th>Escenario</th>
+<th class="num">Ingreso bruto (CUP)</th>
+<th class="num">Costos (CUP)</th>
+<th class="num">Neto (CUP)</th>
+<th class="num">Neto (USD)</th>
+<th class="num">Salarios/mes</th>
+</tr></thead><tbody>
+<tr>
+<td>Conservador</td>
+<td class="num">96.000</td>
+<td class="num">19.200</td>
+<td class="num">76.800</td>
+<td class="num">$85</td>
+<td class="num">10,3</td>
+</tr>
+<tr>
+<td>Moderado</td>
+<td class="num">351.000</td>
+<td class="num">52.650</td>
+<td class="num">298.350</td>
+<td class="num">$332</td>
+<td class="num">40,1</td>
+</tr>
+<tr>
+<td>Favorable</td>
+<td class="num">676.000</td>
+<td class="num">101.400</td>
+<td class="num">574.600</td>
+<td class="num">$638</td>
+<td class="num">77,2</td>
+</tr>
+</tbody>
+</table></div>
+
+  <h3>Tiempo de recuperación</h3>
+  <div class="tabla-envoltura">
+<table class="">
+<caption>Meses para recuperar la inversión por tipo y escenario</caption>
+<thead><tr>
+<th>Propulsión</th>
+<th class="num">Inversión</th>
+<th class="num">Conservador</th>
+<th class="num">Moderado</th>
+<th class="num">Favorable</th>
+</tr></thead><tbody>
+<tr>
+<td>Combustión</td>
+<td class="num">$5.875</td>
+<td class="num">69 <span class='etiqueta-estado'>(5,7 años)</span></td>
+<td class="num"><strong>18</strong> <span class='etiqueta-estado'>(1,5 años)</span></td>
+<td class="num">9 <span class='etiqueta-estado'>(0,8 años)</span></td>
+</tr>
+<tr>
+<td>Eléctrico</td>
+<td class="num">$4.825</td>
+<td class="num">57 <span class='etiqueta-estado'>(4,7 años)</span></td>
+<td class="num"><strong>15</strong> <span class='etiqueta-estado'>(1,2 años)</span></td>
+<td class="num">8 <span class='etiqueta-estado'>(0,6 años)</span></td>
+</tr>
+<tr>
+<td>Híbrido</td>
+<td class="num">$4.626</td>
+<td class="num">54 <span class='etiqueta-estado'>(4,5 años)</span></td>
+<td class="num"><strong>14</strong> <span class='etiqueta-estado'>(1,2 años)</span></td>
+<td class="num">7 <span class='etiqueta-estado'>(0,6 años)</span></td>
+</tr>
+<tr>
+<td>Panel solar</td>
+<td class="num">$5.500</td>
+<td class="num">64 <span class='etiqueta-estado'>(5,4 años)</span></td>
+<td class="num"><strong>17</strong> <span class='etiqueta-estado'>(1,4 años)</span></td>
+<td class="num">9 <span class='etiqueta-estado'>(0,7 años)</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/payback.png" alt="Meses de recuperación de la inversión por tipo y escenario">
+    <figcaption><strong>Figura 8.</strong> Meses necesarios para recuperar la inversión por tipo de triciclo y escenario operativo. La escala es lineal; el escenario conservador multiplica por casi cuatro el tiempo del moderado.</figcaption>
+  </figure>
+
+  <p>
+    La inversión por sí sola explica poco: el factor decisivo es el volumen de ingresos. Pasar del
+    escenario conservador (200 CUP por pasaje y 20 pasajeros al día) al moderado (450 CUP y 30 pasajeros)
+    reduce el tiempo de recuperación de unos 57 meses a unos 15 meses para un
+    eléctrico. Esa diferencia es cuatro veces mayor que la que separa a un tipo de propulsión de otro.
+  </p>
+
+  <h3>Análisis de sensibilidad</h3>
+  <figure class="figura">
+    <img src="assets/img/sensibilidad.png" alt="Mapa de calor de meses de recuperación según tarifa y pasajeros diarios">
+    <figcaption><strong>Figura 9.</strong> Meses de recuperación de un triciclo eléctrico (inversión $4.825) según tarifa por pasaje y pasajeros transportados al día, con 26 días de trabajo al mes y 15 % de costos operativos. Tonos claros = recuperación rápida; tonos oscuros = recuperación lenta.</figcaption>
+  </figure>
+
+  <h3>Calculadora interactiva</h3>
+  <p>
+    Modifica los supuestos para ver cómo cambia el resultado. Los valores iniciales reproducen el
+    escenario moderado del modelo y el precio mediano de cada tipo de propulsión.
+  </p>
+
+  <div class="calculadora" id="calc">
+    <div class="calculadora__panel">
+      <h4>Supuestos operativos</h4>
+      <p>Todos los campos son editables; no se guarda ningún dato.</p>
+
+      <div class="campo">
+        <label for="tipo">Tipo de triciclo</label>
+        <select id="tipo">
+          <option value="electrico" selected>Eléctrico · $4.825</option>
+          <option value="hibrido">Híbrido · $4.626</option>
+          <option value="combustion">Combustión · $5.875</option>
+          <option value="solar">Panel solar · $5.500</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="tarifa">Tarifa por pasaje <output>450</output></label>
+        <input type="range" id="tarifa" min="50" max="1000" step="25" value="450">
+      </div>
+
+      <div class="campo">
+        <label for="pasajeros">Pasajeros por día <output>30</output></label>
+        <input type="range" id="pasajeros" min="5" max="60" step="1" value="30">
+      </div>
+
+      <div class="campo">
+        <label for="dias">Días trabajados al mes <output>26</output></label>
+        <input type="range" id="dias" min="10" max="31" step="1" value="26">
+      </div>
+
+      <div class="campo">
+        <label for="margen">Costos operativos <output>15 %</output></label>
+        <input type="range" id="margen" min="5" max="40" step="1" value="15">
+      </div>
+
+      <div class="campo">
+        <label for="fx">Tipo de cambio (CUP por USD)</label>
+        <input type="number" id="fx" min="100" max="2000" step="10" value="900">
+      </div>
+
+      <button type="button" id="calc-reset" class="insignia insignia--gris" style="cursor:pointer;padding:8px 14px;font-size:12.5px;">Restablecer escenario</button>
+    </div>
+
+    <div class="resultado">
+      <div class="resultado__principal">
+        <div class="resultado__etiqueta">Tiempo de recuperación</div>
+        <div class="resultado__valor"><span id="r-meses">—</span> <small>meses · <span id="r-anios">—</span></small></div>
+        <p class="resultado__nota" id="r-barra-nota"></p>
+      </div>
+      <div class="resultado__barra"><span id="r-barra"></span></div>
+      <div class="resultado__filas">
+        <div class="resultado__fila"><span>Inversión inicial</span><strong id="r-precio">—</strong></div>
+        <div class="resultado__fila"><span>Ingreso bruto mensual</span><strong id="r-bruto">—</strong></div>
+        <div class="resultado__fila"><span>Costos operativos</span><strong id="r-costos">—</strong></div>
+        <div class="resultado__fila"><span>Ingreso neto mensual</span><strong id="r-neto">—</strong></div>
+        <div class="resultado__fila"><span>Equivalente salarial</span><strong id="r-salarios">—</strong></div>
+        <div class="resultado__fila"><span>Pasajeros/día para recuperar en 12 meses</span><strong id="r-pasajeros12">—</strong></div>
+      </div>
+      <p class="resultado__nota">Modelo determinista: no incorpora estacionalidad, averías, impagos ni depreciación. La barra compara el resultado con una ventana de 5 años.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 09 -->
+<section class="seccion" id="contexto">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">09</div>
+    <div>
+      <h2>Contexto socioeconómico</h2>
+      <p class="seccion__entrada">La brecha entre el precio del vehículo y el ingreso salarial como clave del auge.</p>
+    </div>
+  </div>
+
+  <p>
+    La pregunta que ordena esta sección es simple: ¿cuánto representa un triciclo en la economía de un
+    hogar habanero? El ejercicio compara el precio mediano de cada tipo con el salario medio mensual de
+    La Habana, convertido a USD al tipo de cambio informal de referencia (El Toque). La inflación anual
+    pasó de 25,19 % en agosto a 28,44 % en septiembre de 2026 (Trading Economics y ONEI), lo que erosiona
+    el poder de compra del salario en CUP y refuerza la hipótesis de que la inversión se financia con divisas.
+  </p>
+
+  <div class="tabla-envoltura">
+<table class="tabla--compacta">
+<caption>Indicadores de contexto utilizados y pendientes</caption>
+<thead><tr>
+<th>Indicador</th>
+<th class="num">Valor</th>
+<th>Fuente</th>
+<th>Estado</th>
+</tr></thead><tbody>
+<tr>
+<td>Salario medio mensual, La Habana</td>
+<td class="num">7.442,2 CUP</td>
+<td>ONEI</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Tipo de cambio informal</td>
+<td class="num">900 CUP/USD</td>
+<td>El Toque</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Salario en USD</td>
+<td class="num">$8,27 / mes</td>
+<td>Cálculo propio</td>
+<td><span class="insignia insignia--ok">Derivado</span></td>
+</tr>
+<tr>
+<td>Precio mediano, eléctrico</td>
+<td class="num">$4.825</td>
+<td>Dataset unificado</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Años de salario, eléctrico</td>
+<td class="num">48,6 años</td>
+<td>Cálculo propio</td>
+<td><span class="insignia insignia--ok">Derivado</span></td>
+</tr>
+<tr>
+<td>Inflación anual</td>
+<td class="num">25,19 % (ago.) → 28,44 % (sep. 2026)</td>
+<td>Trading Economics · ONEI</td>
+<td><span class="insignia insignia--ok">Verificado</span></td>
+</tr>
+<tr>
+<td>Precio del combustible</td>
+<td class="num">—</td>
+<td>Sin dato</td>
+<td><span class="insignia insignia--pendiente">Pendiente</span></td>
+</tr>
+<tr>
+<td>Remesas recibidas</td>
+<td class="num">—</td>
+<td>Sin dato</td>
+<td><span class="insignia insignia--pendiente">Pendiente</span></td>
+</tr>
+<tr>
+<td>Oferta de transporte público</td>
+<td class="num">—</td>
+<td>Cualitativo</td>
+<td><span class="insignia insignia--pendiente">Pendiente</span></td>
+</tr>
+</tbody>
+</table></div>
+
+  <figure class="figura">
+    <img src="assets/img/asequibilidad.png" alt="Años de salario medio necesarios para comprar un triciclo">
+    <figcaption><strong>Figura 10.</strong> Años de salario medio habanero (ahorrado al 100 %) necesarios para comprar un triciclo al precio mediano de cada tipo. Cálculo propio con salario de 7.442,2 CUP (ONEI) y tipo de cambio de 900 CUP/USD (El Toque).</figcaption>
+  </figure>
+
+  <div class="lectura">
+    <h4>Hipótesis de trabajo</h4>
+    <p>
+      Un triciclo eléctrico equivale a <strong>48,6 años</strong> de salario medio
+      ahorrado íntegramente, y uno de combustión a <strong>59,2 años</strong>. Esa
+      brecha hace prácticamente imposible la compra con ingreso laboral local y explica por qué el
+      financiamiento con ayuda exterior aparece en dos tercios de los casos observados en Libro1.
+    </p>
+    <p>
+      La hipótesis que se deriva —y que el trabajo de campo debe contrastar— es que el auge de los
+      triciclos no responde solo a la crisis del transporte público, sino a la combinación de tres
+      factores: demanda insatisfecha de movilidad, acceso a remesas que financian la inversión y
+      expectativa de un retorno rápido en un mercado dolarizado.
+    </p>
+  </div>
+
+  <div class="aviso aviso--info">
+    <div class="aviso__icono">ℹ</div>
+    <div>
+      <p><strong>Indicadores verificados y pendientes.</strong> El salario medio mensual de La Habana se toma de la ONEI y el tipo de cambio informal de 900 CUP/USD se toma como referencia de El Toque. La inflación anual se actualizó a 28,44 % en septiembre de 2026, frente a 25,19 % en agosto, según Trading Economics y la Oficina Nacional de Estadística de Cuba. El precio del combustible y el flujo de remesas siguen marcados como pendientes y no se usan en los cálculos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 10 -->
+<section class="seccion" id="entrevistas">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">10</div>
+    <div>
+      <h2>Entrevistas: instrumento y plan de campo</h2>
+      <p class="seccion__entrada">Qué se va a preguntar, a quién y cómo se protegerá la información.</p>
+    </div>
+  </div>
+
+  <h3>Cuestionario para conductores y propietarios</h3>
+  <ol>
+    <li>¿Cuál fue la vía para comprar el vehículo? <em>(internet/redes, agencia en Cuba, persona a persona, otra)</em></li>
+    <li>¿Cuál fue el precio pagado?</li>
+    <li>¿En cuánto tiempo considera que puede recuperar la inversión?</li>
+    <li>¿Es dueño del vehículo o lo tiene arrendado?</li>
+    <li>¿Cómo pagó? <em>(autofinanciado, ayuda de familiar o persona en el exterior, otro)</em></li>
+    <li>¿Cuál es el uso principal? <em>(personal, transporte público de personas, carga, otro)</em></li>
+    <li>¿Ha tenido algún accidente?</li>
+    <li>Si lo usa como negocio, ¿lo considera rentable?</li>
+    <li>Tipo de propulsión del vehículo.</li>
+  </ol>
+
+  <h3>Diseño muestral propuesto</h3>
+  <div class="tabla-envoltura">
+    <table class="tabla--compacta">
+      <thead><tr><th>Componente</th><th>Propuesta</th><th>Justificación</th></tr></thead>
+      <tbody>
+        <tr><td>Conductores y propietarios</td><td>30–40 entrevistas, cuota por municipio y propulsión</td><td>Permite comparar grupos sin pretender representatividad estadística</td></tr>
+        <tr><td>Selección</td><td>Bola de nieve con puntos de entrada en paradas y talleres</td><td>El mercado es informal y no existe marco muestral</td></tr>
+        <tr><td>Registro</td><td>Formulario estandarizado + audio solo con consentimiento</td><td>Permite codificar y anonimizar</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aviso aviso--pendiente">
+    <div class="aviso__icono">●</div>
+    <div>
+      <p><strong>Pendiente.</strong> El instrumento está diseñado, pero no aplicado. Cualquier cifra de ingresos, gastos o recuperación que se publique antes del campo será un supuesto del modelo, no un hallazgo empírico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 11 -->
+<section class="seccion" id="etica">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">11</div>
+    <div>
+      <h2>Limitaciones, sesgos y ética</h2>
+      <p class="seccion__entrada">Qué no permite afirmar este estudio y cómo se protegió a las personas y a las fuentes.</p>
+    </div>
+  </div>
+
+  <div class="rejilla rejilla--2">
+    <div class="tarjeta">
+      <h4>Limitaciones de los datos</h4>
+      <ul>
+        <li>53 registros no constituyen una muestra aleatoria del mercado.</li>
+        <li>Son precios de <strong>oferta</strong>, no de transacción; no reflejan descuentos ni regateo.</li>
+        <li>No hay serie temporal: una sola fotografía por fuente.</li>
+        <li>El catálogo aporta solo 4 modelos y todos figuran «agotados».</li>
+        <li>La categoría «panel solar» se trata como tecnología paralela: agrupa variantes con apoyo solar, no una propulsión homogénea.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h4>Sesgos identificados</h4>
+      <ul>
+        <li><strong>Selección:</strong> los anuncios visibles sobrerrepresentan la oferta formal y de mayor precio.</li>
+        <li><strong>Supervivencia:</strong> los vehículos que no se venden no aparecen.</li>
+        <li><strong>Fuente:</strong> cada canal tiene su propio segmento de precio y de cliente.</li>
+        <li><strong>Desconfianza en la mayoría de los entrevistados (riesgo):</strong> la reserva ante preguntas sobre ingresos, propiedad y actividad informal puede provocar subdeclaración o negativa a responder.</li>
+        <li><strong>Sesgo de memoria</strong> al estimar tiempos de recuperación.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Protocolo ético y legal</h3>
+  <ul>
+    <li><strong>Consentimiento informado</strong> verbal y escrito antes de cada entrevista, con explicación del uso académico y del derecho a retirarse.</li>
+    <li><strong>Anonimato:</strong> se eliminan nombres, teléfonos, direcciones y cualquier identificador indirecto; los registros se publican agregados.</li>
+    <li><strong>Datos de anuncios:</strong> no se conservan datos de contacto de vendedores; solo variables de mercado.</li>
+    <li><strong>Términos de uso:</strong> se consultaron los términos y <code>robots.txt</code> de los sitios con acceso automatizado; cuando la extracción masiva no estaba autorizada, la revisión de clasificados se hizo mediante capturas y registro manual.</li>
+    <li><strong>Transparencia:</strong> los supuestos del modelo, el tipo de cambio y las exclusiones están documentados y son editables.</li>
+  </ul>
+
+  <div class="aviso aviso--info">
+    <div class="aviso__icono">ℹ</div>
+    <div>
+      <p><strong>Sobre las múltiples monedas.</strong> Convertir CUP a USD a 900 CUP/USD usa la referencia informal de El Toque. Un cambio de ese tipo de cambio altera la comparación con el salario, pero no los precios en USD ni las conclusiones sobre propulsión.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 12 -->
+<section class="seccion" id="reproducir">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">12</div>
+    <div>
+      <h2>Reproducibilidad y datos abiertos</h2>
+      <p class="seccion__entrada">Todos los números del informe se regeneran con los scripts incluidos.</p>
+    </div>
+  </div>
+
+  <h3>Estructura del proyecto</h3>
+  <pre class="codigo"><code>CD/
+├── Libro1.xlsx                                  # cotizaciones de agencias
+├── revolico_triciclos.csv                       # anuncios clasificados
+├── catalogo_triciclos_cubancargos.csv           # catálogo del importador
+├── dataset_unificado_triciclos.csv              # 53 registros · 22 variables
+├── analisis_unificado_triciclos.py              # unión + estadística + gráficos
+├── extraer_triciclos_cubancargos.py             # scraper reproducible
+├── modelo_recuperacion_triciclos.xlsx           # modelo financiero original
+└── informe/
+    ├── index.html                               # este informe
+    ├── generar_informe.py                       # genera tablas y figuras
+    └── assets/</code></pre>
+
+  <h3>Reproducir</h3>
+  <pre class="codigo"><code>python extraer_triciclos_cubancargos.py   # actualiza el catálogo (opcional)
+python analisis_unificado_triciclos.py    # dataset + estadística + figuras
+python informe/generar_informe.py         # regenera este HTML</code></pre>
+
+  <h3>Descargas</h3>
+  <div class="descargas">
+    <a class="descarga" href="assets/data/dataset_unificado_triciclos.csv" download>
+      <span class="descarga__icono">CSV</span>
+      <span><strong>Dataset unificado</strong><span>53 registros · 22 columnas · UTF-8</span></span>
+    </a>
+    <a class="descarga" href="assets/data/catalogo_triciclos_cubancargos.csv" download>
+      <span class="descarga__icono">CSV</span>
+      <span><strong>Catálogo cubancargos</strong><span>4 modelos · especificaciones técnicas</span></span>
+    </a>
+    <a class="descarga" href="assets/data/resumen_precios_propulsion_3fuentes.csv" download>
+      <span class="descarga__icono">CSV</span>
+      <span><strong>Resumen estadístico</strong><span>Por tipo, por fuente y combinado</span></span>
+    </a>
+    <a class="descarga" href="assets/data/plantilla_entrevistas.csv" download>
+      <span class="descarga__icono">CSV</span>
+      <span><strong>Plantilla de entrevistas</strong><span>Estructura lista para el trabajo de campo</span></span>
+    </a>
+  </div>
+
+  <h3>Tabla completa de registros</h3>
+  <p>Filtra por fuente, tipo o texto y ordena haciendo clic en los encabezados.</p>
+  <div class="controles">
+    <div class="campo">
+      <label for="f-fuente">Fuente</label>
+      <select id="f-fuente">
+        <option value="">Todas</option>
+        <option value="Libro1">Libro1</option>
+        <option value="revolico">revolico</option>
+        <option value="cubancargos">cubancargos</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="f-tipo">Propulsión</label>
+      <select id="f-tipo">
+        <option value="">Todas</option>
+        <option value="Combustión">Combustión</option>
+        <option value="Eléctrico">Eléctrico</option>
+        <option value="Híbrido">Híbrido</option>
+        <option value="Panel solar">Panel solar</option>
+      </select>
+    </div>
+    <div class="campo" style="flex:2 1 220px;">
+      <label for="f-buscar">Buscar</label>
+      <input type="search" id="f-buscar" placeholder="municipio, uso, identificador…">
+    </div>
+  </div>
+  <p class="contador" id="contador-datos"></p>
+
+  <div class="tabla-envoltura" style="max-height:560px;overflow:auto;">
+    <table id="tabla-datos" class="tabla--compacta">
+      <thead>
+        <tr>
+          <th data-tipo="txt">Fuente</th>
+          <th data-tipo="txt">ID</th>
+          <th data-tipo="txt">Propulsión</th>
+          <th data-tipo="num" class="num">Precio USD</th>
+          <th data-tipo="txt">Condición</th>
+          <th data-tipo="txt">Municipio</th>
+          <th data-tipo="txt">Uso</th>
+          <th data-tipo="txt">Adquisición</th>
+          <th data-tipo="num" class="num">Autonomía km</th>
+          <th data-tipo="num" class="num">Carga kg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-fuente="Libro1" data-tipo="Combustión"><td>Libro1</td><td>libro1-01</td><td>Combustión</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>personal</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Combustión"><td>Libro1</td><td>libro1-04</td><td>Combustión</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>transporte personas-público</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Combustión"><td>Libro1</td><td>libro1-03</td><td>Combustión</td><td class="num" data-valor="5850.0">$5.850</td><td></td><td></td><td>transporte personas-público</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Combustión"><td>Libro1</td><td>libro1-02</td><td>Combustión</td><td class="num" data-valor="6000.0">$6.000</td><td></td><td></td><td>personal</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Eléctrico"><td>Libro1</td><td>libro1-05</td><td>Eléctrico</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>transporte personas-público</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Eléctrico"><td>Libro1</td><td>libro1-14</td><td>Eléctrico</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>transporte personas-público</td><td>agencia en cuba</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Eléctrico"><td>Libro1</td><td>libro1-06</td><td>Eléctrico</td><td class="num" data-valor="6000.0">$6.000</td><td></td><td></td><td>transporte personas-público</td><td>persona a persona</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Eléctrico"><td>Libro1</td><td>libro1-07</td><td>Eléctrico</td><td class="num" data-valor="6000.0">$6.000</td><td></td><td></td><td>transporte personas-público</td><td>Agencia en cuba</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Híbrido"><td>Libro1</td><td>libro1-08</td><td>Híbrido</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>transporte personas-público</td><td>Agencia en cuba</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Híbrido"><td>Libro1</td><td>libro1-10</td><td>Híbrido</td><td class="num" data-valor="4500.0">$4.500</td><td></td><td></td><td>transporte de carga</td><td>Agencia en cuba</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Híbrido"><td>Libro1</td><td>libro1-11</td><td>Híbrido</td><td class="num" data-valor="4800.0">$4.800</td><td></td><td></td><td>otro</td><td>agencia en EEUU</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Híbrido"><td>Libro1</td><td>libro1-09</td><td>Híbrido</td><td class="num" data-valor="4900.0">$4.900</td><td></td><td></td><td>transporte de carga</td><td>Agencia en cuba</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Panel solar"><td>Libro1</td><td>libro1-12</td><td>Panel solar</td><td class="num" data-valor="5000.0">$5.000</td><td></td><td></td><td>otro</td><td>Otra</td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="Libro1" data-tipo="Panel solar"><td>Libro1</td><td>libro1-13</td><td>Panel solar</td><td class="num" data-valor="5500.0">$5.500</td><td></td><td></td><td>otro</td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="cubancargos" data-tipo="Eléctrico"><td>cubancargos</td><td>triciclo-nippon-se</td><td>Eléctrico</td><td class="num" data-valor="3842.0">$3.842</td><td>nuevo</td><td></td><td></td><td></td><td class="num">80</td><td class="num">500</td></tr>
+<tr data-fuente="cubancargos" data-tipo="Híbrido"><td>cubancargos</td><td>triciclo-furikazan</td><td>Híbrido</td><td class="num" data-valor="4286.0">$4.286</td><td>nuevo</td><td></td><td></td><td></td><td class="num">50-60</td><td class="num">500</td></tr>
+<tr data-fuente="cubancargos" data-tipo="Híbrido"><td>cubancargos</td><td>triciclo-jeinpeing</td><td>Híbrido</td><td class="num" data-valor="4751.0">$4.751</td><td>nuevo</td><td></td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="cubancargos" data-tipo="Híbrido"><td>cubancargos</td><td>porto-bello-panel-solar</td><td>Híbrido</td><td class="num" data-valor="5320.0">$5.320</td><td>nuevo</td><td></td><td></td><td></td><td class="num">140</td><td class="num">700</td></tr>
+<tr data-fuente="revolico" data-tipo="Combustión"><td>revolico</td><td>revolico-22</td><td>Combustión</td><td class="num" data-valor="5900.0">$5.900</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Combustión"><td>revolico</td><td>revolico-01</td><td>Combustión</td><td class="num" data-valor="5950.0">$5.950</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-02</td><td>Eléctrico</td><td class="num" data-valor="3490.0">$3.490</td><td>nuevo</td><td></td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-26</td><td>Eléctrico</td><td class="num" data-valor="3500.0">$3.500</td><td>nuevo</td><td>Plaza</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-17</td><td>Eléctrico</td><td class="num" data-valor="3600.0">$3.600</td><td>nuevo</td><td>Plaza</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-20</td><td>Eléctrico</td><td class="num" data-valor="3600.0">$3.600</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-03</td><td>Eléctrico</td><td class="num" data-valor="3650.0">$3.650</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-18</td><td>Eléctrico</td><td class="num" data-valor="3750.0">$3.750</td><td>nuevo</td><td>Marianao</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-35</td><td>Eléctrico</td><td class="num" data-valor="3900.0">$3.900</td><td>de uso</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-30</td><td>Eléctrico</td><td class="num" data-valor="4250.0">$4.250</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-06</td><td>Eléctrico</td><td class="num" data-valor="4700.0">$4.700</td><td>nuevo</td><td>Habana Vieja</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-16</td><td>Eléctrico</td><td class="num" data-valor="4700.0">$4.700</td><td>nuevo</td><td></td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-14</td><td>Eléctrico</td><td class="num" data-valor="4800.0">$4.800</td><td>nuevo</td><td>Plaza</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-24</td><td>Eléctrico</td><td class="num" data-valor="4800.0">$4.800</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-05</td><td>Eléctrico</td><td class="num" data-valor="4850.0">$4.850</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-10</td><td>Eléctrico</td><td class="num" data-valor="4850.0">$4.850</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-11</td><td>Eléctrico</td><td class="num" data-valor="4850.0">$4.850</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-09</td><td>Eléctrico</td><td class="num" data-valor="4900.0">$4.900</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-13</td><td>Eléctrico</td><td class="num" data-valor="5100.0">$5.100</td><td>nuevo</td><td>Diez de Octubre</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-28</td><td>Eléctrico</td><td class="num" data-valor="5100.0">$5.100</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-15</td><td>Eléctrico</td><td class="num" data-valor="5300.0">$5.300</td><td>nuevo</td><td>Arroyo Naranjo</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-31</td><td>Eléctrico</td><td class="num" data-valor="5300.0">$5.300</td><td>nuevo</td><td>Cerro</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-32</td><td>Eléctrico</td><td class="num" data-valor="5300.0">$5.300</td><td>nuevo</td><td>Cerro</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-25</td><td>Eléctrico</td><td class="num" data-valor="5350.0">$5.350</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-12</td><td>Eléctrico</td><td class="num" data-valor="5500.0">$5.500</td><td>nuevo</td><td></td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-23</td><td>Eléctrico</td><td class="num" data-valor="5690.0">$5.690</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Eléctrico"><td>revolico</td><td>revolico-08</td><td>Eléctrico</td><td class="num" data-valor="5700.0">$5.700</td><td>nuevo</td><td>Plaza</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Híbrido"><td>revolico</td><td>revolico-07</td><td>Híbrido</td><td class="num" data-valor="4450.0">$4.450</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-19</td><td>Panel solar</td><td class="num" data-valor="5300.0">$5.300</td><td>nuevo</td><td>Cerro</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-04</td><td>Panel solar</td><td class="num" data-valor="5350.0">$5.350</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-34</td><td>Panel solar</td><td class="num" data-valor="5500.0">$5.500</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-33</td><td>Panel solar</td><td class="num" data-valor="5550.0">$5.550</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-27</td><td>Panel solar</td><td class="num" data-valor="5650.0">$5.650</td><td>nuevo</td><td>Centro Habana</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-21</td><td>Panel solar</td><td class="num" data-valor="5800.0">$5.800</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+<tr data-fuente="revolico" data-tipo="Panel solar"><td>revolico</td><td>revolico-29</td><td>Panel solar</td><td class="num" data-valor="6900.0">$6.900</td><td>nuevo</td><td>Playa</td><td></td><td></td><td class="num"></td><td class="num"></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================ 13 -->
+<section class="seccion" id="conclusiones">
+  <div class="seccion__cabecera">
+    <div class="seccion__numero">13</div>
+    <div>
+      <h2>Conclusiones y próximos pasos</h2>
+      <p class="seccion__entrada">Qué se puede afirmar hoy, qué queda como hipótesis y qué haría falta para cerrar la brecha.</p>
+    </div>
+  </div>
+
+  <h3>Conclusiones</h3>
+  <ol>
+    <li><strong>El mercado está dominado por la propulsión eléctrica</strong> (56,6 % de la oferta), pero esa mayoría convive con una gran heterogeneidad de precios: el mismo tipo de vehículo se ofrece entre $3.490 y $6.000.</li>
+    <li><strong>La propulsión ordena el precio en dos escalones</strong>: combustión y panel solar arriba; eléctrico e híbrido abajo. La diferencia entre escalones es estadísticamente detectable, aunque solo el par panel solar–híbrido resiste la corrección por comparaciones múltiples.</li>
+    <li><strong>La dispersión interna supera la diferencia entre tipos.</strong> El precio depende más del modelo, el estado, el canal y el municipio que de la tecnología de propulsión.</li>
+    <li><strong>La compra no se financia con salario.</strong> Un triciclo equivale a décadas de salario medio; la ayuda exterior aparece en dos tercios de los casos con información de financiamiento.</li>
+    <li><strong>La rentabilidad es plausible pero no está medida.</strong> El modelo arroja recuperaciones de 7 a 69 meses según escenario, con una sensibilidad enorme al volumen de pasajeros.</li>
+  </ol>
+
+  <div class="lectura">
+    <h4>Cierre</h4>
+    <p>
+      Los datos disponibles alcanzan para describir con rigor la <em>oferta</em> y su estructura de
+      precios, y para construir un modelo de rentabilidad transparente. No alcanzan, en cambio, para
+      afirmar cómo opera el mercado desde dentro. Ese es el paso que sigue: convertir los supuestos en
+      observaciones y volver a estimar.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__interior">
+    <div>
+      <h4>Sobre este informe</h4>
+      <p>Informe de investigación sobre el mercado de triciclos en La Habana. Integra anuncios clasificados, catálogo de importador y cotizaciones de agencias con un modelo financiero de escenarios.</p>
+      <p>Versión 1.0 · 4 de noviembre de 2026</p>
+    </div>
+    <div>
+      <h4>Fuentes</h4>
+      <p>revolico (35 anuncios)<br>Libro1 (14 cotizaciones)<br>cubancargos (4 modelos)</p>
+    </div>
+    <div>
+      <h4>Datos y código</h4>
+      <p><a href="assets/data/dataset_unificado_triciclos.csv" download>Dataset unificado (CSV)</a><br>
+      <a href="assets/data/resumen_precios_propulsion_3fuentes.csv" download>Resumen estadístico (CSV)</a><br>
+      <a href="#reproducir">Scripts y reproducibilidad</a></p>
+    </div>
+  </div>
+  <div class="pie__legal">
+    Datos agregados y anonimizados. No se publican nombres, teléfonos ni direcciones de vendedores o conductores.
+    Los precios son de oferta y no constituyen una tasación. Las cifras de rentabilidad son un modelo de escenarios, no una medición de campo.
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
